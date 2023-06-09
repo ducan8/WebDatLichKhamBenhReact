@@ -13,9 +13,10 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: 'hieumai',
+            username: 'thanh@gmail.com',
             password: '123456',
             isShowPassword: true,
+            errorMessage: '',
         }
     }
 
@@ -35,13 +36,27 @@ class Login extends Component {
     }
 
     handleLogin = async () => {
-        console.log('username: ', this.state.username, ' password: ', this.state.password);
-        console.log(this.state);
+        this.setState({
+            errorMessage: '',
+        });
         try {
-            await handleLoginApi(this.state.username, this.state.password)
-            
+            let data = await handleLoginApi(this.state.username, this.state.password)
+            if (data && data.errCode !== 0) {
+                this.setState({
+                    errorMessage: data.message
+                })
+            }
+            if (data && data.errCode === 0) {
+                this.props.userLoginSuccess(data.user)
+                console.log('login success');
+            }
         } catch (error) {
-            console.log(error);
+            if (error.response);
+            if (error.response.data) {
+                this.setState({
+                    errorMessage: error.response.data.message,
+                })
+            }
         }
     }
 
@@ -76,10 +91,13 @@ class Login extends Component {
                                     onChange={(event) => this.handleOnChangePassword(event)}
                                 />
                                 <span onClick={() => this.handleShowHidePassword()}>
-                                    <i className={this.state.isShowPassword ? "far fa-eye" : "far fa-eye-slash" }></i>
+                                    <i className={this.state.isShowPassword ? "far fa-eye" : "far fa-eye-slash"}></i>
                                 </span>
                             </div>
 
+                        </div>
+                        <div className='col-12' style={{ color: 'red' }}>
+                            {this.state.errorMessage}
                         </div>
                         <div className='col-12'>
                             <button className='btn-login' onClick={() => this.handleLogin()}>Login</button>
@@ -91,8 +109,8 @@ class Login extends Component {
                             <span className="text-other">Or Login with</span>
                         </div>
                         <div className='col-12 social-login'>
-                            <i class="fab fa-google-plus-g google"></i>
-                            <i class="fab fa-facebook-f facebook"></i>
+                            <i className="fab fa-google-plus-g google"></i>
+                            <i className="fab fa-facebook-f facebook"></i>
                         </div>
                     </div>
                 </div>
@@ -110,8 +128,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         navigate: (path) => dispatch(push(path)),
-        adminLoginSuccess: (adminInfo) => dispatch(actions.adminLoginSuccess(adminInfo)),
-        adminLoginFail: () => dispatch(actions.adminLoginFail()),
+        userLoginFail: () => dispatch(actions.userLoginFail()),
+        userLoginSuccess: (userInfo) => dispatch(actions.userLoginSuccess(userInfo)),
     };
 };
 
