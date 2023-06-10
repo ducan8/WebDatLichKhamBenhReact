@@ -1,4 +1,28 @@
 {
+    "homeheader": {
+        "speciality" : "Chuyên khoa",
+        "searchdoctor": "Chọn bác sĩ theo chuyên khoa",
+        "health-facility": "Cơ sở y tế",
+        "select-room": "Chọn phòng khám sức khoẻ",
+        "doctor": "Bác sĩ",
+        "select-doctor": "Chọn bác sĩ ưu tú",
+        "fee": "Gói khám",
+        "check-heath": "Chọn gói khám sức khoẻ phù hợp",
+        "support": "Trợ giúp"
+
+
+
+    },
+    "banner": {
+        "title1": "NỀN TẢNG CHĂM SÓC SỨC KHOẺ",
+        "title2": "HỖ TRỢ ĐẶT LỊCH KHÁM BỆNH",
+        "specialist-examination": "Khám chuyên khoa",
+        "remote-examination": "Khám từ xa",
+        "general-examination": "Khám tổng quát",
+        "medical-test": "Xét nghiệm y học",
+        "mental-health": "Sức khoẻ tinh thần",
+        "dental-examination": "Khám nha khoa"
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",

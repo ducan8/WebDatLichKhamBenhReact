@@ -2,7 +2,7 @@
     // border: 1px solid red;
     height: 60px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 40px;
 
     .home-header-content {
         width: 100%;
@@ -10,7 +10,7 @@
         display: flex;
 
         .left-content {
-            width: 25%;
+            width: 20%;
             // border: 1px solid green;
             display: flex;
             align-items: center;
@@ -22,15 +22,17 @@
             }
 
             .header-logo {
-                background: url('../../assets/logo1.png') center center no-repeat;
+                background: url('../../assets/logo1.png') center left no-repeat;
+                margin: 0px 0px 10px 20px;
                 height: 100%;
                 width: 100%;
+                background-size: 50%;
             }
         }
 
         .center-content {
-            width: 50%;
-            border: 1px solid orange;
+            width: 55%;
+            // border: 1px solid orange;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -46,19 +48,42 @@
 
         .right-content {
             width: 25%;
-            border: 1px solid grey;
+            // border: 1px solid grey;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
 
-            .support {}
+            .support {
+                margin-right: 40px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                
+                i {
+                    font-size: 15px;
+                    margin-right: 5px;
+                }
+            }
+            .language-vi {
+                cursor: pointer;
+                &.active {
+                    color: orange;
+                }
+            }
+            .language-en {
+                margin: 0 10px;
+                cursor: pointer;
+                &.active {
+                    color: blue;
+                }
+            }
         }
     }
 }
 
 .home-header-banner {
 
-    background: url('../../assets/Header-background.jpeg') transparent;
+    background-image: url('../../assets/Header-background.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -70,15 +95,18 @@
     // opacity: 60%;
 
     .content-up {
-        border: 1px solid red;
-        height: 50%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 225, 225, 0.1));
+
+        // border: 1px solid red;
+        height: 65%;
+
         .title1 {
             text-align: center;
             font-size: 35px;
             text-shadow: 1px 1px 1px #333;
             margin-bottom: 5px;
             color: rgb(255, 255, 255);
-            margin-top: 150px;
+            margin-top: 80px;
             z-index: 99;
         }
 
@@ -88,7 +116,7 @@
             text-shadow: 1px 1px 1px #000000;
             margin-bottom: 15px;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 35px;
         }
 
         .search {
@@ -124,8 +152,13 @@
     }
 
     .content-down {
-        border: 1px solid green;
-        height: 50%;
+        // border: 1px solid green;
+        height: 35%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background-image: linear-gradient(rgba(255, 225, 225, 0.1),rgba(255, 225, 225, 0.9),rgba(255, 225, 225, 1) );
+
         .options {
 
             text-align: center;
@@ -135,24 +168,30 @@
 
             .option-child {
                 width: 100px;
-                border: 1px solid red;
+                // border: 1px solid red;
+
                 .icon-child {
                     background: white;
-                    width: 40px;
-                    height: 40px;
+                    width: 60px;
+                    height: 60px;
                     padding: 10px;
                     border-radius: 50%;
                     text-align: center;
                     margin: 0 auto;
+                    box-shadow: 0px 5px 3px #15d3b3;
 
                     i {
+                        margin-top: 5px;
                         color: #15d3b3;
-                        font-size: 20px;
+                        font-size: 30px;
                     }
                 }
+
                 .text-child {
+                    margin-top: 10px;
                     font-size: 17px;
-                    font-weight: 500;
+                    font-weight: 600;
+                    // color: white;
 
                     &:hover {
                         color: #15d3b3;
