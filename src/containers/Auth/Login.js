@@ -13,9 +13,9 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: 'thanh@gmail.com',
+            username: 'vjppro@gmail.com',
             password: '123456',
-            isShowPassword: true,
+            isShowPassword: false,
             errorMessage: '',
         }
     }
@@ -24,14 +24,14 @@ class Login extends Component {
         this.setState({
             username: event.target.value,
         })
-        console.log(event.target.value);
+        // console.log(event.target.value);
 
     }
     handleOnChangePassword = (event) => {
         this.setState({
             password: event.target.value,
         })
-        console.log(event.target.value);
+        // console.log(event.target.value);
 
     }
 
