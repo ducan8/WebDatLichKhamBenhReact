@@ -17,27 +17,27 @@ class MedicalFacility extends Component {
                 </div>
                 <div className='section-body'>
                     <Slider {...this.props.settings}>
-                        <div className='specialty-customize'>
+                        <div className='section-customize'>
                             <div className='bg-img section-medical-facility'></div>
                             <div>Bệnh viện đa khoa Hồng Ngọc</div>
                         </div>
-                        <div className='specialty-customize'>
+                        <div className='section-customize'>
                             <div className='bg-img section-medical-facility'></div>
                             <div>Bệnh viện đa khoa Hồng Ngọc</div>
                         </div>
-                        <div className='specialty-customize'>
+                        <div className='section-customize'>
                             <div className='bg-img section-medical-facility'></div>
                             <div>Bệnh viện đa khoa Hồng Ngọc</div>
                         </div>
-                        <div className='specialty-customize'>
+                        <div className='section-customize'>
                             <div className='bg-img section-medical-facility'></div>
                             <div>Bệnh viện đa khoa Hồng Ngọc</div>
                         </div>
-                        <div className='specialty-customize'>
+                        <div className='section-customize'>
                             <div className='bg-img section-medical-facility'></div>
                             <div>Bệnh viện đa khoa Hồng Ngọc</div>
                         </div>
-                        <div className='specialty-customize'>
+                        <div className='section-customize'>
                             <div className='bg-img section-medical-facility'></div>
                             <div>Bệnh viện đa khoa Hồng Ngọc</div>
                         </div>
