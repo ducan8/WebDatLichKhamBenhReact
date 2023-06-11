@@ -5,6 +5,9 @@ import Specialty from './Section/Specialty';
 import MedicalFacility from './Section/MedicalFacility';
 import OutstandingDoctor from './Section/OutstandingDoctor';
 import HanBook from './Section/HandBook';
+import About from './Section/About';
+import HomeFooter from './Section/HomeFooter';
+
 import './HomePage.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css'; 
@@ -30,7 +33,8 @@ class HomePage extends Component {
                 <MedicalFacility  settings={settings} />
                 <OutstandingDoctor settings={settings}/>
                 <HanBook  settings={settings} />
-
+                <About />
+                <HomeFooter />
             </React.Fragment>
         );
     }

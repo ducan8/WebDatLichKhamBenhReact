@@ -50,6 +50,8 @@ class Login extends Component {
                 this.props.userLoginSuccess(data.user)
                 console.log('login success');
             }
+        console.log('huhu log in điiii');
+
         } catch (error) {
             if (error.response);
             if (error.response.data) {

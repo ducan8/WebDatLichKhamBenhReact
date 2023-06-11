@@ -3,6 +3,11 @@
     height: 60px;
     width: 100%;
     padding: 0 40px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: white;
 
     .home-header-content {
         width: 100%;
