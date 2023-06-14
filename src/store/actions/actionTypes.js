@@ -26,6 +26,8 @@ const actionTypes = Object.freeze({
     FETCH_ROLE_FAILED: 'FETCH_ROLE_FAILED',
     FETCH_ROLE_SUCCESS: 'FETCH_ROLE_SUCCESS',
 
+    CREATE_USER_SUCCESS: 'CREATE_USER_SUCCESS',
+    CREATE_USER_FAILED: 'CREATE_USER_FAILED' ,
 })
 
 export default actionTypes;

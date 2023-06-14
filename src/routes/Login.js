@@ -19,8 +19,8 @@ class Login extends Component {
     }
 
     initialState = {
-        username: '',
-        password: '',
+        username: 'kiendien@gmail.com',
+        password: '123456',
         loginError: ''
     }
 
