@@ -5,6 +5,8 @@ import { escape, escapeRegExp } from 'lodash';
 import { LANGUAGES } from '../../../utils/constant';
 import * as actions from '../../../store/actions';
 import './UserRedux.scss'
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 class UserRedux extends Component {
 
@@ -14,7 +16,8 @@ class UserRedux extends Component {
             genderArr: [],
             positionArr: [],
             roleArr: [],
-            previewImgURL: ''
+            previewImgURL: '',
+            isOpen: false,
         };
     }
     async componentDidMount() {
@@ -54,15 +57,22 @@ class UserRedux extends Component {
     handleOnchangeImage = (event) => {
         let data = event.target.files;
         let file = data[0];
-        if(file) {
+        if (file) {
             let objectUrl = URL.createObjectURL(file);
-            
+
             this.setState({
                 previewImgURL: objectUrl
             })
-            
+
             console.log('file: ', this.state.previewImgURL);
         }
+    }
+
+    openPreviewImage = () => {
+        if(!this.state.previewImgURL) return;
+        this.setState({
+            isOpen: true
+        })
     }
 
     render() {
@@ -149,8 +159,9 @@ class UserRedux extends Component {
                                         />
                                         <label className='label-upload' htmlFor="previewImg">Tải ảnh <i className='fas fa-upload'></i></label>
                                         <div className='preview-image'
-                                        
+
                                             style={{ backgroundImage: `url(${this.state.previewImgURL})` }}
+                                            onClick={() => this.openPreviewImage()}
                                         >
 
                                         </div>
@@ -165,7 +176,12 @@ class UserRedux extends Component {
                         </div>
                     </div>
                 </div>
-
+                { this.state.isOpen === true &&
+                    <Lightbox
+                        mainSrc={this.state.previewImgURL}
+                        onCloseRequest={() => this.setState({ isOpen: false })}
+                    />
+                }
             </div>
         )
     }
