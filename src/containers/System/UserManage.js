@@ -13,6 +13,7 @@ class UserManage extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            arrUsers: [],
             isOpenModalUser: false,
             isOpenModalEditUser: false,
             userEdit: {},
@@ -116,7 +117,7 @@ class UserManage extends Component {
 
     render() {
         let arrUsers = this.state.arrUsers;
-
+        console.log('arrUsers: ', arrUsers);
         return (
             <div className='users-container'>
                 <ModalUser
