@@ -57,17 +57,14 @@ class UserRedux extends Component {
             let arrGenders = this.props.genderRedux;
             this.setState({
                 genderArr: arrGenders,
-                gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].key : ''
+                gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].keyMap : ''
             })
         }
         if (prevProps.roleRedux !== this.props.roleRedux) {
             let arrRoles = this.props.roleRedux;
-
-
-
             this.setState({
                 roleArr: arrRoles,
-                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].key : ''
+                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : ''
 
 
 
@@ -77,7 +74,7 @@ class UserRedux extends Component {
             let arrPositions = this.props.positionRedux;
             this.setState({
                 positionArr: arrPositions,
-                position: arrPositions && arrPositions.length > 0 ? arrPositions[0].key : ''
+                position: arrPositions && arrPositions.length > 0 ? arrPositions[0].keyMap : ''
             })
         }
         if (prevProps.listUsers !== this.props.listUsers) {
@@ -92,11 +89,14 @@ class UserRedux extends Component {
                 lastName: '',
                 phoneNumber: '',
                 address: '',
-                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].key : '',
-                gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].key : '',
-                position: arrPositions && arrPositions.length > 0 ? arrPositions[0].key : '',
+                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : '',
+                gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].keyMap : '',
+                position: arrPositions && arrPositions.length > 0 ? arrPositions[0].keyMap : '',
                 avatar: '',
                 action: CRUD_ACTIONS.CREATE,
+                previewImgURL: '',
+            }, () => {
+                // console.log('callback check state: ', this.state);
             })
         }
     }
@@ -158,7 +158,7 @@ class UserRedux extends Component {
                 gender: this.state.gender,
                 roleId: this.state.role,
                 positionId: this.state.position,
-                // avatar: this.state.avatar,
+                avatar: this.state.avatar,
         }) 
         }
 
@@ -201,10 +201,9 @@ class UserRedux extends Component {
     }
 
     handleEditUserFromParent = (user) => {
-        let imageBase64 = ';'
+        let imageBase64 = '';
         if(user.image) {
-            const imageBuffer = Buffer.from(JSON.stringify(user.image))
-            imageBase64 = `data:image/jpeg;base64,` + imageBuffer.toString('base64')
+            imageBase64 = new Buffer(user.image, 'base64').toString('binary');
 
         }
 
@@ -234,7 +233,7 @@ class UserRedux extends Component {
         let positions = this.state.positionArr;
         let language = this.props.language;
         let isGetGenders = this.props.isLoadingGender;
-        console.log('check state: ', this.state);
+        // console.log('check state: ', this.state);
         let { email, password, firstName, lastName, phoneNumber, address, gender, position, role, avatar } = this.state;
         return (
             <div className='user-redux-container'>
@@ -292,13 +291,11 @@ class UserRedux extends Component {
                                     <select className='form-control'
                                         value={gender}
                                         onChange={(event) => this.onChangeInput(event, 'gender')}
-                                        onClick={() => {console.log('gender: ', gender)}}
-
 
                                     >
                                         {genders && genders.length > 0 && genders.map((item, index) => {
                                             return (
-                                                <option key={index} value={item.key}>
+                                                <option key={index} value={item.keyMap}>
                                                     {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
                                                 </option>
                                             )
@@ -309,13 +306,12 @@ class UserRedux extends Component {
                                 <div className='col-3'>
                                     <label>< FormattedMessage id="manage-user.roleId" />: </label>
                                     <select className='form-control'
-                                        onChange={(event) => this.onChangeInput(event, 'roleId')}
+                                        onChange={(event) => this.onChangeInput(event, 'role')}
                                         value={role}
-                                        onClick={() => {console.log('roles: ', roles)}}
                                     >
                                         {roles && roles.length > 0 && roles.map((item, index) => {
                                             return (
-                                                <option key={index} value={item.key}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
+                                                <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
                                             );
                                         })}
                                     </select>
@@ -330,7 +326,7 @@ class UserRedux extends Component {
                                     >
                                         {positions && positions.length > 0 && positions.map((item, index) => {
                                             return (
-                                                <option key={index} value={item.key}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
+                                                <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
                                             );
                                         })}
                                     </select>
