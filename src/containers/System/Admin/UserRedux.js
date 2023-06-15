@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { escape, escapeRegExp } from 'lodash';
-import { LANGUAGES, CRUD_ACTIONS } from '../../../utils/constant';
+import { LANGUAGES, CRUD_ACTIONS, CommonUtils } from '../../../utils';
 import * as actions from '../../../store/actions';
 import './UserRedux.scss'
 import Lightbox from 'react-image-lightbox';
@@ -101,18 +101,19 @@ class UserRedux extends Component {
         }
     }
 
-    handleOnchangeImage = (event) => {
+    handleOnchangeImage = async (event) => {
         let data = event.target.files;
         let file = data[0];
         if (file) {
+            let base64 = await CommonUtils.getBase64(file);
+            console.log('base64: ' + base64);
             let objectUrl = URL.createObjectURL(file);
 
             this.setState({
                 previewImgURL: objectUrl,
-                avatar: file
+                avatar: base64
             })
-
-            console.log('file: ', this.state.previewImgURL);
+            // console.log('file: ', this.state.previewImgURL);
         }
     }
 
@@ -141,6 +142,7 @@ class UserRedux extends Component {
                 gender: this.state.gender,
                 roleId: this.state.role,
                 positionId: this.state.position,
+                avatar: this.state.avatar
             })
         }
         if(action === CRUD_ACTIONS.EDIT) {
@@ -199,6 +201,13 @@ class UserRedux extends Component {
     }
 
     handleEditUserFromParent = (user) => {
+        let imageBase64 = ';'
+        if(user.image) {
+            const imageBuffer = Buffer.from(JSON.stringify(user.image))
+            imageBase64 = `data:image/jpeg;base64,` + imageBuffer.toString('base64')
+
+        }
+
         console.log('check handdle edit user from parent: ', user);
         this.setState({
             userEditId: user.id,
@@ -212,7 +221,10 @@ class UserRedux extends Component {
             gender: user.gender,
             position: user.positionId,
             avatar: '',
+            previewImgURL: imageBase64,
             action: CRUD_ACTIONS.EDIT,
+        }, () => {
+            console.log('check base64: ', this.state)
         })
     }
 
@@ -222,7 +234,7 @@ class UserRedux extends Component {
         let positions = this.state.positionArr;
         let language = this.props.language;
         let isGetGenders = this.props.isLoadingGender;
-        // console.log('check state: ', this.state);
+        console.log('check state: ', this.state);
         let { email, password, firstName, lastName, phoneNumber, address, gender, position, role, avatar } = this.state;
         return (
             <div className='user-redux-container'>
@@ -280,6 +292,8 @@ class UserRedux extends Component {
                                     <select className='form-control'
                                         value={gender}
                                         onChange={(event) => this.onChangeInput(event, 'gender')}
+                                        onClick={() => {console.log('gender: ', gender)}}
+
 
                                     >
                                         {genders && genders.length > 0 && genders.map((item, index) => {
@@ -297,7 +311,7 @@ class UserRedux extends Component {
                                     <select className='form-control'
                                         onChange={(event) => this.onChangeInput(event, 'roleId')}
                                         value={role}
-
+                                        onClick={() => {console.log('roles: ', roles)}}
                                     >
                                         {roles && roles.length > 0 && roles.map((item, index) => {
                                             return (
