@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import Slider from 'react-slick';
 import * as actions from '../../../store/actions';
 import { LANGUAGES } from '../../../utils';
+import { withRouter } from 'react-router';
 
 class OutstandingDoctor extends Component {
 
@@ -25,6 +26,10 @@ class OutstandingDoctor extends Component {
         this.props.loadTopDoctors();
     }
 
+    handleViewDetailDoctor = (doctor) => {
+        console.log('view info', doctor);
+        this.props.history.push(`/detail-doctor/${doctor.id}`);
+    }
     render() {
         let { language } = this.props;
         console.log('check top doctor: ', this.props.topDoctorsRedux);
@@ -50,7 +55,7 @@ class OutstandingDoctor extends Component {
                                 console.log('nameVi: ', nameVi);
                                 console.log('anh: ',item.lastName, imageBase64);
                                 return (
-                                    <div className='section-customize' key={index}>
+                                    <div className='section-customize' key={index} onClick={() => this.handleViewDetailDoctor(item)}>
                                         <div className='customize-border'>
                                             <div className='outer-bg'>
                                                 <div className='bg-img section-outstanding-doctor'
@@ -90,4 +95,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor));
