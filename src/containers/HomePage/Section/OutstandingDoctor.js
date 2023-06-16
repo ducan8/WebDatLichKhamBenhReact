@@ -34,8 +34,8 @@ class OutstandingDoctor extends Component {
             <div className='section-share section-outstanding-doctor'>
                 <div className='section-container'>
                     <div className='section-header'>
-                        <span className='title-section'>Bác sĩ nổi bật</span>
-                        <button className='btn-section'>Xem thêm</button>
+                        <span className='title-section'>< FormattedMessage id='homepage.out-standing-doctor'/></span>
+                        <button className='btn-section'>< FormattedMessage id='homepage.more'/></button>
                     </div>
                     <div className='section-body'>
                         <Slider {...this.props.settings}>
@@ -45,8 +45,8 @@ class OutstandingDoctor extends Component {
                                 if (item.image) {
                                     imageBase64 = new Buffer(item.image, 'base64').toString('binary');
                                 }
-                                let nameVi = `${item.positionData.valueVi} ` + item.firstName + ' ' + item.lastName;
-                                let nameEn = `${item.positionData.valueEn} ` + item.firstName + ' ' + item.lastName;
+                                let nameVi = `${item.positionData.valueVi}, ` + item.firstName + ' ' + item.lastName;
+                                let nameEn = `${item.positionData.valueEn}, ` + item.firstName + ' ' + item.lastName;
                                 console.log('nameVi: ', nameVi);
                                 console.log('anh: ',item.lastName, imageBase64);
                                 return (

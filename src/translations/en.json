@@ -12,7 +12,7 @@
         "welcome": "Welcome, "
     },
     "banner": {
-        "title1": "HEALTH CARE FOUNDATION",
+        "title1": "HEALTH CARE PLATFORM",
         "title2": "SUPPORTING SCHEDULES AN MEDICAL EXAMINATIONS",
         "specialist-examination": "Specialist examination",
         "remote-examination": "Remote examination",
@@ -50,5 +50,9 @@
         "save" : "Save",
         "image": "Image",
         "edit" : "Save edit"
+    },
+    "homepage": {
+        "out-standing-doctor": "Last week's featured doctor",
+        "more": "MORE Info"
     }
 }
