@@ -34,6 +34,10 @@
             "manage-specialty": "Manage specialties",
             "manage-handbook": "Manage handbook",
             "handbook": "Handbook"
+        },
+        "doctor": {
+            "manage-schedule": "Manage Doctor's schedule"
+
         }
     },
     "manage-user": {

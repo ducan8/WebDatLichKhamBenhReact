@@ -23,8 +23,6 @@ class DetailDoctor extends Component {
                     detailDoctor: res.data
                 })
             }
-            console.log('check res: ', res);
-            console.log('check res.data: ', res.infor);
         }
     }
 
@@ -32,8 +30,6 @@ class DetailDoctor extends Component {
 
     }
     render() {
-
-        console.log('check state: --- ', this.state);
         let { language } = this.props;
         let nameEn = '', nameVi = '';
         let { detailDoctor } = this.state;
@@ -65,7 +61,7 @@ class DetailDoctor extends Component {
 
                     </div>
                     <div className='schedule-doctor'>
-                        
+
                     </div>
                     <div className='detail-infor-doctor'>
                         {detailDoctor && detailDoctor.Markdown && detailDoctor.Markdown.contentHTML &&

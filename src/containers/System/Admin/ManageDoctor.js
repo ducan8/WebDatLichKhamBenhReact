@@ -107,11 +107,9 @@ class ManageDoctor extends Component {
                 let object = {};
                 let labelVi = `${item.firstName} ${item.lastName}`;
                 let labelEn = `${item.firstName} ${item.lastName}`;
-                console.log('labelVi', labelVi, labelEn);
                 object.label = language === LANGUAGES.VI ? labelVi : labelEn;
                 object.value = item.id;
                 result.push(object);
-                console.log('result: ', result);
             })
 
         }
