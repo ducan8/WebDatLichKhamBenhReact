@@ -69,11 +69,11 @@ class UserManage extends Component {
     }
 
     handleDeleteUser = async (user) => {
-        console.log('click delete ', user);
+        // console.log('click delete ', user);
         try {
             let response = await deleteUserService(user.id);
             if (response && response.errCode === 0) {
-                console.log('render lại đê');
+                // console.log('render lại đê');
                 await this.getAllUsersFromReact();
             } else {
                 console.log(response.errMessage);
@@ -85,7 +85,7 @@ class UserManage extends Component {
     }
 
     handleEditUser = async (user) => {
-        console.log('click edit ', user);
+        // console.log('click edit ', user);
         this.setState({
             isOpenModalEditUser: true,
             userEdit: user,
@@ -97,12 +97,11 @@ class UserManage extends Component {
     doEditUser = async (user) => {
         try {
             let response = await editUserService(user);
-            console.log(response);
+            // console.log(response);
             if (response && response.errCode === 0) {
                 this.setState({
                     isOpenModalEditUser: false,
                 })
-                console.log('ahihi');
                 await this.getAllUsersFromReact();
             } else {
                 console.log(response.errMessage);

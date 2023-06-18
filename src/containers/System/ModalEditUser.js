@@ -44,7 +44,7 @@ class ModalEditUser extends Component {
                 address: currentUser.address,
             })
         }
-        console.log(this.props);
+        // console.log(this.props);
     }
 
     toggle = () => {
@@ -58,7 +58,7 @@ class ModalEditUser extends Component {
         this.setState({
             ...copyState
         });
-        console.log('event: ', this.state);
+        // console.log('event: ', this.state);
 
     }
 

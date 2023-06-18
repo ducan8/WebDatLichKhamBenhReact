@@ -81,7 +81,14 @@
             "select-doctor" : "Chọn bác sĩ",
             "intro": "Thông tin giới thiệu",
             "save": "Lưu thông tin",
-            "create": "Tạo thông tin"
+            "create": "Tạo thông tin",
+            "price": "Chọn giá gói khám bệnh",
+            "payment": "Chọn phương thức thanh toán",
+            "province": "Chọn thành phố",
+            "nameClinic": "Tên cơ sở y tế",
+            "addressClinic": "Địa chỉ cơ sở y tế",
+            "note": "Ghi chú"
+
         }
     }
 }

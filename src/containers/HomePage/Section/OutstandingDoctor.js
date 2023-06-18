@@ -27,12 +27,12 @@ class OutstandingDoctor extends Component {
     }
 
     handleViewDetailDoctor = (doctor) => {
-        console.log('view info', doctor);
+        // console.log('view info', doctor);
         this.props.history.push(`/detail-doctor/${doctor.id}`);
     }
     render() {
         let { language } = this.props;
-        console.log('check top doctor: ', this.props.topDoctorsRedux);
+        // console.log('check top doctor: ', this.props.topDoctorsRedux);
         let arrDoctors = this.state.arrDoctors;
         arrDoctors = arrDoctors;
         return (
@@ -52,8 +52,8 @@ class OutstandingDoctor extends Component {
                                 }
                                 let nameVi = `${item.positionData.valueVi}, ` + item.firstName + ' ' + item.lastName;
                                 let nameEn = `${item.positionData.valueEn}, ` + item.firstName + ' ' + item.lastName;
-                                console.log('nameVi: ', nameVi);
-                                console.log('anh: ',item.lastName, imageBase64);
+                                // console.log('nameVi: ', nameVi);
+                                // console.log('anh: ',item.lastName, imageBase64);
                                 return (
                                     <div className='section-customize' key={index} onClick={() => this.handleViewDetailDoctor(item)}>
                                         <div className='customize-border'>

@@ -68,7 +68,7 @@ getArrDays = (language) => {
     if (this.props.doctorIdFromParent !== prevProps.doctorIdFromParent) {
         let allDays = this.getArrDays(this.props.language);
         let res = await getScheduleDoctorByDate(this.props.doctorIdFromParent, allDays[0].value);
-        console.log('check hôm nay: ', res.data);
+        // console.log('check hôm nay: ', res.data);
         this.setState({
             allAvailableTime: res.data ? res.data : []
         })

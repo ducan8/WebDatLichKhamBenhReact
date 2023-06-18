@@ -44,7 +44,7 @@ class ModalUser extends Component {
         this.setState({
             ...copyState
         });
-        console.log('event: ', this.state);
+        // console.log('event: ', this.state);
         
     }
     
