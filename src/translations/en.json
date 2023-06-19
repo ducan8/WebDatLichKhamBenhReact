@@ -71,6 +71,13 @@
             "no-schedule": "The doctor does not have an appointment at this time, please choose anthor time",
             "choose": "Choose ",
             "book-free": " and book (free)"
+        },
+        "extra-infor-doctor": {
+            "text-address": "Address of Clinic: ",
+            "price": "Price: ",
+            "detail": "See details.",
+            "payment": "Customers can pay by: ",
+            "hide-price": "Hide-price list."
         }
     },
     "admin": {

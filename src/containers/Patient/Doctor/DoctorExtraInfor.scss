@@ -3,6 +3,7 @@
 
     .content-up {
         margin-bottom: 10px;
+
         .text-address {
             text-transform: uppercase;
             color: #333;
@@ -21,10 +22,14 @@
 
     .content-down {
 
-        .short-infor {
-            span {
+        .short-info {
+            .detail {
                 cursor: pointer;
                 color: rgb(38, 160, 231);
+            }
+
+            .currency {
+                margin: 0 5px;
             }
         }
         .title-price {
@@ -51,6 +56,14 @@
             background-color: #eee;
         }
 
+        .hide-price {
+            margin-top: 10px;
+
+            span {
+                cursor: pointer;
+                color: rgb(38, 160, 231);
+            }
+        }
 
     }
 }
