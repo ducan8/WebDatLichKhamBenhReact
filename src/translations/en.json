@@ -78,6 +78,21 @@
             "detail": "See details.",
             "payment": "Customers can pay by: ",
             "hide-price": "Hide-price list."
+        },
+        "booking-modal": {
+            "title": "Personal information of the person who needs to make an appointment ",
+            "fullName": "Full Name",
+            "phoneNumber": "Phone Number",
+            "email": "Email",
+            "address": "Address",
+            "birthday": "Date of Birth",
+            "gender":"Gender",
+            "reason": "Reasons for medial examination",
+            "confirm": "Confirm",
+            "cancel": "Cancel",
+            "priceBooking": "Free to booking",
+            "price": "Price: "
+
         }
     },
     "admin": {
