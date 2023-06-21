@@ -110,7 +110,9 @@
             "province": "Chọn thành phố",
             "nameClinic": "Tên cơ sở y tế",
             "addressClinic": "Địa chỉ cơ sở y tế",
-            "note": "Ghi chú"
+            "note": "Ghi chú",
+            "specialty": "Chọn chuyên khoa",
+            "select-clinic": "Chọn phòng khám"
 
         }
     }
