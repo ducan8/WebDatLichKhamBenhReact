@@ -106,7 +106,7 @@ class UserRedux extends Component {
         let file = data[0];
         if (file) {
             let base64 = await CommonUtils.getBase64(file);
-            console.log('base64: ' + base64);
+            // console.log('base64: ' + base64);
             let objectUrl = URL.createObjectURL(file);
 
             this.setState({
@@ -207,7 +207,7 @@ class UserRedux extends Component {
 
         }
 
-        console.log('check handdle edit user from parent: ', user);
+        // console.log('check handdle edit user from parent: ', user);
         this.setState({
             userEditId: user.id,
             email: user.email,

@@ -15,7 +15,7 @@ export const fetchGenderStart = () => {
             if (res && res.errCode === 0) {
                 dispatch(fetchGenderSuccess(res.data));
             } else {
-                console.log('fail');
+                // console.log('fail');
                 dispatch(fetchGenderFailed());
             }
         } catch (error) {
@@ -119,7 +119,7 @@ export const fetchAllUsersStart = () => {
 
             let res = await getAllUsers('ALL');
             let res1 = await getTopDoctorHomeService(3);
-            console.log('res1: ', res1);
+            // console.log('res1: ', res1);
             if (res && res.errCode === 0) {
                 dispatch(fetchAllUsersSuccess(res.users.reverse()));
             } else {
@@ -201,7 +201,7 @@ export const fetchTopDoctor = () => {
     return async (dispatch, getState) => {
         try {
             let res = await getTopDoctorHomeService('') ;
-            console.log('check res: ', res) ;
+            // console.log('check res: ', res) ;
             if (res && res.errCode === 0) {
             //     toast.success('Update the user succeeded');
                 dispatch({
@@ -324,7 +324,7 @@ export const getRequiredDoctorInfor = () => {
                     }
                 dispatch(fetchRequiredDoctorInforSuccess(data));
             } else {
-                console.log('fail');
+                // console.log('fail');
                 dispatch(fetchRequiredDoctorInforFailed());
             }
         } catch (error) {

@@ -48,7 +48,7 @@ class ProfileDoctor extends Component {
     renderTimeBooking = (dataTime) => {
         let {language} = this.props;
 
-        console.log('check inside render: ', dataTime);
+        // console.log('check inside render: ', dataTime);
         if (dataTime && !_.isEmpty(dataTime)) {
             let time = language === LANGUAGES.VI ?
             dataTime.timeTypeData.valueVi : dataTime.timeTypeData.valueEn;
@@ -75,7 +75,7 @@ class ProfileDoctor extends Component {
             nameVi = `${dataProfile.positionData.valueVi}, ` + dataProfile.firstName + ' ' + dataProfile.lastName;
             nameEn = `${dataProfile.positionData.valueEn}, ` + dataProfile.firstName + ' ' + dataProfile.lastName;
         }
-        console.log('check state', dataTime);
+        // console.log('check state', dataTime);
         return (
             <div className='profile-doctor-container'>
                 <div className='intro-doctor'>

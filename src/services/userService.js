@@ -9,7 +9,7 @@ const getAllUsers = (inputId) => {
 }
 
 const createNewUserService = (data) => {
-    console.log('check data from service: ', data);
+    // console.log('check data from service: ', data);
     return axios.post(`/api/create-new-user`, data);
 }
 
@@ -72,10 +72,15 @@ const createNewSpecialty = (data) => {
     return axios.post(`/api/create-new-specialty`, data)
 }
 
+const getAllSpecialty = () => {
+    return axios.get(`/api/get-specialty`)
+}
+
+
 export { handleLoginApi, getAllUsers, createNewUserService, 
     deleteUserService, editUserService, getAllcodeService, 
     getTopDoctorHomeService, getAllDoctors, saveDetailDoctorService,
     getDetailInfoDoctor, saveBulkScheduleDoctor, getScheduleDoctorByDate,
     getExtraInforDoctorById, getProfileDoctorById,
     postPatientBookAppointment, postVerifyBookAppointment,
-    createNewSpecialty };
+    createNewSpecialty, getAllSpecialty };

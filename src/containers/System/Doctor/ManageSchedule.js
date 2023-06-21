@@ -140,7 +140,7 @@ class ManageSchedule extends Component {
             toast.success('Save information successfully')
         } else {
             toast.error('Error save schedule doctor');
-            console.log('Error saving schedule, res: ', res);
+            // console.log('Error saving schedule, res: ', res);
         }
     }
 
