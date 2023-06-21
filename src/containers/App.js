@@ -18,6 +18,7 @@ import CustomScrollbars from '../components/CustomScrollbars';
 import DetailDoctor from './Patient/Doctor/DetailDoctor';
 import Doctor from '../routes/Doctor';
 import VerifyEmail from './Patient/VerifyEmail';
+import ManageSpecialty from './System/Specialty/ManageSpecialty';
 
 class App extends Component {
 
