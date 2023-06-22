@@ -70,6 +70,9 @@ export const doctorMenu = [
         menus: [
             { //quản lý lịch khám bệnh của bác sĩ              
                 name: 'menu.doctor.manage-schedule', link: '/doctor/manage-schedule'
+            },
+            { //quản lý benh nhan             
+                name: 'menu.doctor.manage-schedule', link: '/doctor/manage-patient'
             }
         ]
     }
