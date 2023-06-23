@@ -1,7 +1,7 @@
-div._loading_overplay_wrapper {
+div._loading_overlay_wrapper {
     position: unset;
 
-    .loading_overplay_wrapper {
+    .loading_overlay_wrapper {
         z-index: 10000000000;
     }
 }
