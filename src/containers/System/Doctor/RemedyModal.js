@@ -45,13 +45,14 @@ class RemedyModal extends Component {
         if (file) {
             let base64 = await CommonUtils.getBase64(file);
             this.setState({
-                base64: base64
+                imgBase64: base64
             })
         }
     }
     
     handleSendRemedy = () => {
         this.props.sendRemedy(this.state)
+        // console.log('check state: ', this.state);
     }
 
     render() {

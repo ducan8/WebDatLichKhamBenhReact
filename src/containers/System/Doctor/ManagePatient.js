@@ -115,9 +115,10 @@ class ManagePatient extends Component {
     render() {
         // console.log('check state: ', this.state);
         let { dataPatient, isOpenRemedyModal, dataModal } = this.state;
+        // console.log('check dataPatient: ', dataPatient);
         let { language } = this.props;
         return (
-            <>
+            <React.Fragment>
                 <LoadingOverlay
                     active={this.state.isShowLoading}
                     spinner
@@ -186,7 +187,7 @@ class ManagePatient extends Component {
                         sendRemedy={this.sendRemedy}
                     />
                 </LoadingOverlay>
-            </>
+            </React.Fragment>
         );
     }
 }
