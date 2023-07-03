@@ -100,6 +100,10 @@ const postSendRemedy = (data) => {
     return axios.post(`/api/send-remedy`, data)
 }
 
+const postSendCollab = (data) => {
+    return axios.post(`/api/send-collab`, data)
+}
+
 export {
     handleLoginApi, getAllUsers, createNewUserService,
     deleteUserService, editUserService, getAllcodeService,
@@ -108,5 +112,6 @@ export {
     getExtraInforDoctorById, getProfileDoctorById,
     postPatientBookAppointment, postVerifyBookAppointment,
     createNewSpecialty, getAllSpecialty, getAllDetailSpecialtyById, createNewClinic,
-    getAllClinic, getAllDetailClinicById, getAllPatientForDoctor, postSendRemedy
+    getAllClinic, getAllDetailClinicById, getAllPatientForDoctor, postSendRemedy,
+    postSendCollab
 };

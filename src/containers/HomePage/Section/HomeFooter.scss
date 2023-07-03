@@ -1,0 +1,41 @@
+.home-footer {
+    margin-top: 100px;
+    height: 300px;
+    background-color: rgb(193, 201, 198);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+    .footer-container {
+        margin: 0 40px 0 40px;
+        margin-top: 50px;
+        height: 210px;
+        display: flex;
+        font-weight: 600;
+
+        .about-us {
+            margin-left: 200px;
+            width: 60%;
+            text-align: left;
+        }
+
+        .info {
+            width: 25%;
+            margin-left: -300px;
+            li {
+                list-style-type: none;
+                text-align: left;
+            }
+        }
+
+        .follow-us {
+            width: 15%;
+
+        }
+    }
+
+    .last-quote {
+        border-top: 2px solid gray;
+    }
+
+}

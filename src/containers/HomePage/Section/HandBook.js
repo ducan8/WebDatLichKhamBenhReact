@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import Slider from 'react-slick';
+import './HandBook.scss';
 
 class HandBook extends Component {
 
@@ -19,28 +20,21 @@ class HandBook extends Component {
                         <Slider {...this.props.settings}>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook'></div>
-                                <div>Khám bệnh</div>
+                                <div>Cẩm nang 1</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook'></div>
-                                <div>Khám bệnh</div>
+                                <div>Cẩm nang 2</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook'></div>
-                                <div>Khám bệnh</div>
+                                <div>Cẩm nang 3</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook'></div>
-                                <div>Khám bệnh</div>
+                                <div>Cẩm nang 4</div>
                             </div>
-                            <div className='section-customize'>
-                                <div className='bg-img section-handbook'></div>
-                                <div>Khám bệnh</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-img section-handbook'></div>
-                                <div>Khám bệnh</div>
-                            </div>
+                            
                         </Slider>
                     </div>
 

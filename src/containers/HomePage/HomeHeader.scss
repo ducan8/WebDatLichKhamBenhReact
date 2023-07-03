@@ -8,6 +8,7 @@
     width: 100%;
     z-index: 100;
     background: white;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
 
     .home-header-content {
         width: 100%;
@@ -25,7 +26,7 @@
                 font-size: 30px;
                 color: grey;
             }
-
+            
             .header-logo {
                 background: url('../../assets/logo1.png') center left no-repeat;
                 margin: 0px 0px 10px 20px;
@@ -63,32 +64,38 @@
                 display: flex;
                 align-items: center;
                 cursor: pointer;
-                
+
                 i {
                     font-size: 15px;
                     margin-right: 5px;
                 }
             }
+
             .language-vi {
                 cursor: pointer;
                 opacity: 0.2;
+
                 &.active {
                     opacity: 1;
                     color: red;
                 }
-                &:hover{
+
+                &:hover {
                     opacity: 1;
                 }
             }
+
             .language-en {
                 opacity: 0.2;
                 margin: 0 10px;
                 cursor: pointer;
+
                 &.active {
                     opacity: 1;
                     color: rgb(60, 255, 0);
                 }
-                &:hover{
+
+                &:hover {
                     opacity: 1;
                 }
             }
@@ -172,7 +179,7 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        background-image: linear-gradient(rgba(255, 225, 225, 0.1),rgba(255, 225, 225, 0.9),rgba(255, 225, 225, 1) );
+        background-image: linear-gradient(rgba(255, 225, 225, 0.1), rgba(255, 225, 225, 0.9), rgba(255, 225, 225, 1));
 
         .options {
 
@@ -217,4 +224,58 @@
 
     }
 
+}
+
+
+.header-menu {
+    display: flex;
+    .menu-left {
+        width: 260px;
+        height: 100%;
+        position: fixed;
+        overflow: auto;
+        background-color: #f1f1f1;
+        list-style-type: none;
+        margin-left: 0px;
+        padding: 0;
+        box-sizing: border-box;
+        z-index: 300000;
+        ul {
+            // display: inline-block !important;
+            margin: 0;
+            padding: 0;
+            li {
+                cursor: pointer;
+                list-style-type: none;
+                height: 50px;
+                border-bottom: 1px solid rgb(207, 204, 204);
+                font-size: 16px;
+                font-weight: 500;
+                padding-left: 15px;
+                a {
+                    display: inline-block;
+                    margin-top: 15px;
+                    color: #000000;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                &:hover {
+                    background-color: #15d3b3;
+                }
+            }
+        }
+    }
+    .menu-right {
+        background-color: #a39b9b;
+        width: 1560px;
+        position: fixed;
+        overflow: auto;
+        height: 100vh;
+        list-style-type: none;
+        margin-left: 260px;
+        z-index: 300000;
+
+    }
 }

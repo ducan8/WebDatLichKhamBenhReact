@@ -5,26 +5,63 @@ import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils/constant';
 import { withRouter } from 'react-router';
 import { changeLanguageApp } from '../../store/actions';
+import Collab from '../NavMenu/Collab';
+import { Link  } from "react-router-dom";
+import HomePage from './HomePage';
 
 class HomeHeader extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            display: 'none',
+            opacity: 0,
+        }
+    }
     changeLanguage = (language) => {
         this.props.changeLanguageAppRedux(language);
     }
 
     returnToHome = () => {
-        if(this.props.history) {
+        if (this.props.history) {
             this.props.history.push(`/home`)
         }
     }
+    handleMenu = () => {
+        this.setState({
+            display: 'none',
+            opacity: 0
+        })
+    }
+
+    handleDisplayMenu = () => {
+        this.setState({
+            display: 'block',
+            opacity: 0.4
+        })
+    }
     render() {
         let language = this.props.language;
+        let { display, opacity } = this.state;
         return (
             <React.Fragment>
+                <div className='header-menu'  >
+                    <nav className='menu-left' style={{ 'display': `${display}` }}>
+                        <ul>
+                            <li onClick={() => this.returnToHome()}><a>Trang chu</a></li>
+                            <li><Link to='/login'>Dang nhap noi bo</Link></li>
+                            <li><Link to='/collaborate'>Hop tac</Link></li>
+                            <li><Link to='/contact'>Lien he voi chung toi</Link></li>
+                        </ul>
+                    </nav>
+                    <div className='menu-right' style={{ 'opacity': `${opacity}`, 'display': `${display}` }} onClick={this.handleMenu}>
+                    </div>
+                </div>
+
                 <div className='home-header-container'>
                     <div className='home-header-content'>
                         <div className='left-content'>
-                            <i className="fas fa-bars"></i>
+                            <i className="fas fa-bars" onClick={this.handleDisplayMenu}></i>
                             <div className="header-logo" onClick={() => this.returnToHome()}></div>
                         </div>
                         <div className='center-content'>

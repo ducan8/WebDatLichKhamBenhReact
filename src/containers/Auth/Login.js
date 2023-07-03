@@ -13,7 +13,7 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: 'vjppro@gmail.com',
+            username: 'admin@gmail.com',
             password: '123456',
             isShowPassword: false,
             errorMessage: '',
@@ -78,21 +78,21 @@ class Login extends Component {
             <div className="login-background">
                 <div className="login-container">
                     <div className='login-content'>
-                        <div className='col-12 text-login'>Login</div>
+                        <div className='col-12 text-login'>Đăng nhập</div>
                         <div className='col-12 form-group login-input'>
-                            <label>Username: </label>
-                            <input type="text" className="form-control" placeholder='Enter your username'
+                            <label>Tài khoản: </label>
+                            <input type="text" className="form-control" placeholder='Nhập email'
                                 value={this.state.username}
                                 onChange={(event) => this.handleOnChangeUserName(event)}
                             />
                         </div>
                         <div className='col-12 form-group login-input'>
-                            <label>Password: </label>
+                            <label>Mật khẩu: </label>
                             <div className="custom-input-password">
                                 <input
                                     type={this.state.isShowPassword ? 'text' : 'password'}
                                     className="form-control"
-                                    placeholder='Enter your password'
+                                    placeholder='Nhập mật khẩu'
                                     value={this.state.password}
                                     onChange={(event) => this.handleOnChangePassword(event)}
                                     onKeyDown={(event) => this.handleKeyDown(event)}
@@ -107,7 +107,7 @@ class Login extends Component {
                             {this.state.errorMessage}
                         </div>
                         <div className='col-12'>
-                            <button className='btn-login' onClick={() => this.handleLogin()}>Login</button>
+                            <button className='btn-login' onClick={() => this.handleLogin()}>Đăng nhập</button>
                         </div>
                         <div className='col-12'>
                             <span className='forgot-password'>Forgot your password?</span>
