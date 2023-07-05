@@ -41,7 +41,7 @@ class HomeHeader extends Component {
         })
     }
     render() {
-        let language = this.props.language;
+        let { language, isLoggedIn } = this.props;
         let { display, opacity } = this.state;
         return (
             <React.Fragment>
@@ -49,7 +49,7 @@ class HomeHeader extends Component {
                     <nav className='menu-left' style={{ 'display': `${display}` }}>
                         <ul>
                             <li onClick={() => this.returnToHome()}><a>Trang chu</a></li>
-                            <li><Link to='/login'>Dang nhap noi bo</Link></li>
+                            <li><Link to='/login'>{isLoggedIn ? 'Quản lý thông tin' : 'Dang nhap noi bo' }</Link></li>
                             <li><Link to='/collaborate'>Hop tac</Link></li>
                             <li><Link to='/contact'>Lien he voi chung toi</Link></li>
                         </ul>
