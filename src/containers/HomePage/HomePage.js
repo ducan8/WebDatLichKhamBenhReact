@@ -40,12 +40,13 @@ class HomePage extends Component {
                 <HanBook settings={settings} />
                 <About />
                 <HomeFooter />
-                <MessengerCustomerChat
-                    pageId="102601946221028"
-                    appId="1565948963808728"
-                    isShowChatbot= {isShowChatbot}
+                {
+                    isShowChatbot && <MessengerCustomerChat
+                        pageId="102601946221028"
+                        appId="1565948963808728"
                     // htmlRef="<REF_STRING>"
-                />
+                    />
+                }
                 {/* <Chatbot dataHref={currentURL} /> */}
             </React.Fragment>
         );

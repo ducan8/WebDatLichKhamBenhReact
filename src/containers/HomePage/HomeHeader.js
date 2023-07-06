@@ -16,7 +16,7 @@ class HomeHeader extends Component {
         this.state = {
             display: 'none',
             opacity: 0,
-            isShowChatbot: 'false',
+            // isShowChatbot: 'false',
         }
     }
     changeLanguage = (language) => {
@@ -41,8 +41,10 @@ class HomeHeader extends Component {
             opacity: 0.4
         })
     }
-    handleChatbot = (isShowChatbot) => {
+    handleChatbot = () => {
+        let isShowChatbot = this.props.isShowChatbot;
         this.props.showChatbot(!isShowChatbot)
+        console.log('show chatbot: ', isShowChatbot);
     }
 
     render() {
@@ -91,7 +93,7 @@ class HomeHeader extends Component {
 
                         </div>
                         <div className='right-content'>
-                            <div className='support' onClick={() => this.handleChatbot(isShowChatbot)}>
+                            <div className='support' onClick={() => this.handleChatbot()}>
                                 <i className='fas fa-question-circle'></i> < FormattedMessage id="homeheader.support" />
                             </div>
                             <div className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'}><span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VI</span></div>
