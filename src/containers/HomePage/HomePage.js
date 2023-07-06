@@ -11,8 +11,6 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 import './HomePage.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Chatbot from '../Patient/SocialPlugin/Chatbot';
-import { showChatbot } from '../../store/actions';
 
 
 class HomePage extends Component {
@@ -28,9 +26,9 @@ class HomePage extends Component {
             // nextArrow: <SampleNextArrow />,
             // prevArrow: <SamplePrevArrow />
         };
-        // let currentURL = +process.env.REACT_APP_IS_LOCALHOST === 1 ?
-        //     "https://chatbot-heathcare-775548f1d48a.herokuapp.com/" : window.location.href;
+
         let { isShowChatbot } = this.props;
+        console.log('show chatbot phía homepage: ', isShowChatbot);
         return (
             <React.Fragment>
                 <HomeHeader isShowBanner={true} />
@@ -47,7 +45,6 @@ class HomePage extends Component {
                     // htmlRef="<REF_STRING>"
                     />
                 }
-                {/* <Chatbot dataHref={currentURL} /> */}
             </React.Fragment>
         );
     }
@@ -63,7 +60,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        showChatbot: (isShowChatbot) => dispatch(showChatbot(isShowChatbot))
     };
 };
 
