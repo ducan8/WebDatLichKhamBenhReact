@@ -26,7 +26,9 @@ class HomePage extends Component {
             // nextArrow: <SampleNextArrow />,
             // prevArrow: <SamplePrevArrow />
         };
-
+        let currentURL = +process.env.REACT_APP_IS_LOCALHOST === 1 ?
+        "https://chatbot-heathcare-775548f1d48a.herokuapp.com/" : window.location.href;
+        
         return (
             <React.Fragment>
                 <HomeHeader isShowBanner={true} />
@@ -36,7 +38,7 @@ class HomePage extends Component {
                 <HanBook settings={settings} />
                 <About />
                 <HomeFooter />
-                <Chatbot />
+                <Chatbot dataHref={currentURL} />
             </React.Fragment>
         );
     }
