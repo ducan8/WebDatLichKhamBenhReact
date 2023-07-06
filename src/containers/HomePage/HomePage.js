@@ -10,7 +10,8 @@ import HomeFooter from './Section/HomeFooter';
 
 import './HomePage.scss';
 import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css'; 
+import 'slick-carousel/slick/slick-theme.css';
+import Chatbot from '../Patient/SocialPlugin/Chatbot';
 
 class HomePage extends Component {
 
@@ -28,13 +29,14 @@ class HomePage extends Component {
 
         return (
             <React.Fragment>
-                <HomeHeader isShowBanner={true}/>
+                <HomeHeader isShowBanner={true} />
                 <Specialty settings={settings} />
-                <MedicalFacility  settings={settings} />
-                <OutstandingDoctor settings={settings}/>
-                <HanBook  settings={settings} />
+                <MedicalFacility settings={settings} />
+                <OutstandingDoctor settings={settings} />
+                <HanBook settings={settings} />
                 <About />
                 <HomeFooter />
+                <Chatbot />
             </React.Fragment>
         );
     }
