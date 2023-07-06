@@ -15,10 +15,6 @@ class Chatbot extends React.Component {
         if (window.FB) {
             window.FB.XFBML.parse();
         }
-        var chatbox = document.getElementById('fb-customer-chat');
-        chatbox.setAttribute("page_id", process.env.REACT_APP_FACEBOOK_APP_ID);
-        chatbox.setAttribute("attribution", "biz_inbox");
-
         let { language } = this.props;
         let locale = language === LANGUAGES.VI ? 'vi_VN' : 'en_US'
         window.fbAsyncInit = function () {
