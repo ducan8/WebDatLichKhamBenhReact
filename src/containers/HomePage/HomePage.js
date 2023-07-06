@@ -28,7 +28,6 @@ class HomePage extends Component {
         };
 
         let { isShowChatbot } = this.props;
-        console.log('show chatbot phía homepage: ', isShowChatbot);
         return (
             <React.Fragment>
                 <HomeHeader isShowBanner={true} />

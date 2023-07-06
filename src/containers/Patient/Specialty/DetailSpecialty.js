@@ -107,7 +107,7 @@ class DetailSpecialty extends Component {
     render() {
         let { arrDoctorId, dataDetailSpecialty, listProvince } = this.state;
         console.log('check res: ', this.state);
-        let { language } = this.props;
+        let { language, isShowChatbot } = this.props;
         return (
             <div className='detail-specialty-container'>
                 <HomeHeader />
@@ -171,6 +171,13 @@ class DetailSpecialty extends Component {
                         })}
                         
                 </div>
+                {
+                    isShowChatbot && <MessengerCustomerChat
+                        pageId="102601946221028"
+                        appId="1565948963808728"
+                    // htmlRef="<REF_STRING>"
+                    />
+                }
                 <HomeFooter />          
             </div>
         );
@@ -179,7 +186,8 @@ class DetailSpecialty extends Component {
 
 const mapStateToProps = state => {
     return {
-        language: state.app.language
+        language: state.app.language,
+        isShowChatbot: state.app.isShowChatbot
     };
 };
 

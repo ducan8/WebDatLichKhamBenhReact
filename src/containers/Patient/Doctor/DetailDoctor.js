@@ -40,7 +40,7 @@ class DetailDoctor extends Component {
 
     }
     render() {
-        let { language } = this.props;
+        let { language, isShowChatbot } = this.props;
         let nameEn = '', nameVi = '';
         let { detailDoctor } = this.state;
         if (detailDoctor && detailDoctor.positionData) {
@@ -103,6 +103,13 @@ class DetailDoctor extends Component {
                         />
                     </div>
                 </div>
+                {
+                    isShowChatbot && <MessengerCustomerChat
+                        pageId="102601946221028"
+                        appId="1565948963808728"
+                    // htmlRef="<REF_STRING>"
+                    />
+                }
             </>
         );
     }
@@ -110,7 +117,8 @@ class DetailDoctor extends Component {
 
 const mapStateToProps = state => {
     return {
-        language: state.app.language
+        language: state.app.language,
+        isShowChatbot: state.app.isShowChatbot
     };
 };
 

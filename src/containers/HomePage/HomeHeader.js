@@ -44,7 +44,6 @@ class HomeHeader extends Component {
     handleChatbot = () => {
         let isShowChatbot = this.props.isShowChatbot;
         this.props.showChatbot(!isShowChatbot)
-        console.log('show chatbot: ', isShowChatbot);
     }
 
     render() {
