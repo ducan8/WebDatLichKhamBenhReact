@@ -4,7 +4,7 @@ import './HomeHeader.scss';
 import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils/constant';
 import { withRouter } from 'react-router';
-import { changeLanguageApp } from '../../store/actions';
+import { changeLanguageApp, showChatbot } from '../../store/actions';
 import Collab from '../NavMenu/Collab';
 import { Link  } from "react-router-dom";
 import HomePage from './HomePage';
@@ -16,6 +16,7 @@ class HomeHeader extends Component {
         this.state = {
             display: 'none',
             opacity: 0,
+            isShowChatbot: 'false',
         }
     }
     changeLanguage = (language) => {
@@ -40,8 +41,12 @@ class HomeHeader extends Component {
             opacity: 0.4
         })
     }
+    handleChatbot = (isShowChatbot) => {
+        this.props.showChatbot(!isShowChatbot)
+    }
+
     render() {
-        let { language, isLoggedIn } = this.props;
+        let { language, isLoggedIn, isShowChatbot } = this.props;
         let { display, opacity } = this.state;
         return (
             <React.Fragment>
@@ -86,7 +91,7 @@ class HomeHeader extends Component {
 
                         </div>
                         <div className='right-content'>
-                            <div className='support'>
+                            <div className='support' onClick={() => this.handleChatbot(isShowChatbot)}>
                                 <i className='fas fa-question-circle'></i> < FormattedMessage id="homeheader.support" />
                             </div>
                             <div className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'}><span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VI</span></div>
@@ -147,7 +152,8 @@ const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
         userInfo: state.user.userInfo,
-        language: state.app.language
+        language: state.app.language,
+        isShowChatbot: state.app.isShowChatbot
 
     };
 };
@@ -155,6 +161,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language)),
+        showChatbot: (isShowChatbot) => dispatch(showChatbot(isShowChatbot))
     };
 };
 

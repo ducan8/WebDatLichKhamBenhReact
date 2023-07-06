@@ -13,3 +13,8 @@ export const changeLanguageApp = (languageInput) => ({
     type: actionTypes.CHANGE_LANGUAGE,
     language: languageInput
 })
+
+export const showChatbot = (isShowChatbotInput) => ({
+    type: actionTypes.SHOW_CHATBOT,
+    isShowChatbot: isShowChatbotInput
+})
