@@ -38,7 +38,7 @@ class HomePage extends Component {
                 <HanBook settings={settings} />
                 <About />
                 <HomeFooter />
-                <Chatbot dataHref={currentURL} />
+                {/* <Chatbot dataHref={currentURL} /> */}
             </React.Fragment>
         );
     }
