@@ -27,8 +27,8 @@ class HomePage extends Component {
             // prevArrow: <SamplePrevArrow />
         };
         let currentURL = +process.env.REACT_APP_IS_LOCALHOST === 1 ?
-        "https://chatbot-heathcare-775548f1d48a.herokuapp.com/" : window.location.href;
-        
+            "https://chatbot-heathcare-775548f1d48a.herokuapp.com/" : window.location.href;
+
         return (
             <React.Fragment>
                 <HomeHeader isShowBanner={true} />

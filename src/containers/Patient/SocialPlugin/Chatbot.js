@@ -51,6 +51,7 @@ class Chatbot extends React.Component {
     }
 
     render() {
+        let { dataHref } = this.props;
 
         return (
             <>
