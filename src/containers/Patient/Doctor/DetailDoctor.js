@@ -9,6 +9,8 @@ import DoctorExtraInfor from './DoctorExtraInfor';
 import LikeAndShare from '../SocialPlugin/LikeAndShare';
 import Comment from '../SocialPlugin/Comment';
 import HomeFooter from '../../HomePage/Section/HomeFooter';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+
 
 class DetailDoctor extends Component {
 

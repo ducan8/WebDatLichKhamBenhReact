@@ -10,6 +10,8 @@ import { getAllDetailSpecialtyById, getAllcodeService } from '../../../services/
 import _ from 'lodash';
 import { LANGUAGES } from '../../../utils';
 import HomeFooter from '../../HomePage/Section/HomeFooter';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+
 
 class DetailSpecialty extends Component {
 
